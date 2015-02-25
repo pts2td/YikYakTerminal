@@ -470,5 +470,30 @@ def read(yaklist):
 			commentNum += 1
 			
 		yakNum += 1
+def export(yaklist, filename):
+	yakNum = 1
+	text_file = open(filename, "a")
+	for yak in yaklist:
+		
+		text_file.write(yak.message + "\n")
+		text_file.write(str(yak.likes) + "\n")
+		
+		text_file.write(str(yak.time) + "\n")
+		
+		text_file.write(str(yak.latitude) + "\n")
+		
+		text_file.write(str(yak.longitude) + "\n")
+		##PUT IN CURRENT TIME TO FIND THEIR ACCENT
+			
+		yakNum += 1
+	text_file.close()
+
+def message_only(yaklist, filename):
+	yakNum = 1
+	text_file = open(filename, "a")
+	for yak in yaklist:
+		text_file.write(yak.message + " ")
+		yakNum += 1
+	text_file.close()
 		
 main()
